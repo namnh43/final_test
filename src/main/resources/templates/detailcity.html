@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail city</title>
+  <link rel="stylesheet" href="bootstrap_css/bootstrap.min.css">
+  <script src="bootstrap_js/bootstrap.bundle.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/ajax.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<h1 id="city_name_head"></h1>
+<button type="button" class="btn btn-primary" id="exit_detailCity">Xem danh sách thành phố</button>
+<table class="table table-hover rounded rounded-3 border">
+  <tbody>
+  <tr>
+    <th>Tên</th>
+    <td><input id="detail_name" type="text"></td>
+  </tr>
+  <tr>
+    <th>Quốc gia</th>
+    <td id="detail_country"></td>
+  </tr>
+  <tr>
+    <th>Diện tích</th>
+    <td><input id="detail_area" type="text"></td>
+  </tr>
+  <tr>
+    <th>Dân số</th>
+    <td><input id="detail_people" type="text"></td>
+  </tr>
+  <tr>
+    <th>GDP</th>
+    <td><input id="detail_gdp" type="text"></td>
+  </tr>
+  <tr>
+    <th>Giới thiệu</th>
+    <td>
+      <textarea class="form-control" id="detail_description" rows="3"></textarea>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary">Chỉnh sửa</button>
+<button type="button" class="btn btn-primary">Xóa</button>
+</body>
+<script>
+  $(document).ready(function () {
+    getDetailCityById();
+  })
+</script>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>New City</title>
+  <link rel="stylesheet" href="bootstrap_css/bootstrap.min.css">
+  <script src="bootstrap_js/bootstrap.bundle.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="js/ajax.js"></script>
+  <link rel="stylesheet" href="style/style.css">
+</head>
+<body>
+<h1>Thêm thành phố</h1>
+<table class="table table-hover rounded rounded-3 border">
+  <tbody>
+  <tr>
+    <th>Tên</th>
+    <td><input id="newcity_name" type="text"></td>
+  </tr>
+  <tr>
+    <th>Quốc gia</th>
+    <td>
+      <select class="form-select" aria-label="Default select example">
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+      </select>
+    </td>
+  </tr>
+  <tr>
+    <th>Diện tích</th>
+    <td><input id="newcity_area" type="text"></td>
+  </tr>
+  <tr>
+    <th>Dân số</th>
+    <td><input id="newcity_people" type="text"></td>
+  </tr>
+  <tr>
+    <th>GDP</th>
+    <td><input id="newcity_gdp" type="text"></td>
+  </tr>
+  <tr>
+    <th>Giới thiệu</th>
+    <td>
+      <textarea class="form-control" id="newcity_description" rows="3"></textarea>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<button type="button" class="btn btn-primary" id="add_new_city">Nhập thành phố</button>
+<button type="button" class="btn btn-primary" id="exit_newcity">Thoát</button>
+</body>
+<script>
+  $(document).ready(function () {
+    $("#add_new_city").click(function () {
+
+      let data = {
+        name: $("#newcity_name").val(),
+        country: {id:1,name:"Vietnam"},
+        area: $("#newcity_area").val(),
+        people: $("newcity_people").val(),
+        gdp: $("newcity_gdp").val(),
+        description: $("newcity_description").val()
+      }
+      create_new_city(data);
+    })
+    $("#exit_newcity").click(function () {
+      console.log("exit")
+      location.href = "listCities.html";
+    })
+  })
+</script>
+</html>
